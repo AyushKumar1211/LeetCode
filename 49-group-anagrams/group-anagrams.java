@@ -1,6 +1,6 @@
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-        List<List<String>> ans = new ArrayList<>();
+        // List<List<String>> ans = new ArrayList<>();
         List<String> arr = new ArrayList<>();
         int n = strs.length;
         for(int i=0;i<n;i++){
@@ -22,9 +22,9 @@ class Solution {
                 mp.put(arr.get(i),chk);
             }
         }
-        for(List<String> chk : mp.values()){
-            ans.add(chk);
-        }
-        return ans;
+        // for(List<String> chk : mp.values()){
+        //     ans.add(chk);
+        // }
+        return new ArrayList<>(mp.values());
     }
 }
