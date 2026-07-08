@@ -8,7 +8,7 @@ class Solution {
                 ans = i;
             }
             else if(arr[i]<max){
-                break;
+                return ans;
             }
         }
         return ans;
