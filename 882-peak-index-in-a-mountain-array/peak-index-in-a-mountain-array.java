@@ -1,16 +1,21 @@
 class Solution {
     public int peakIndexInMountainArray(int[] arr) {
-        int max = 0;
-        int ans = 0;
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]>max){
-                max = arr[i];
-                ans = i;
-            }
-            else if(arr[i]<max){
-                return ans;
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (arr[mid] > arr[mid + 1]) {
+                if (arr[mid] > arr[mid - 1]) {
+                    return mid;
+                } else {
+                    right = mid - 1;
+                }
+            } else {
+                left = mid + 1;
             }
         }
-        return ans;
+        return 0;
     }
 }
