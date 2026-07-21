@@ -28,6 +28,9 @@ class Solution {
         if(count<k){
             count++;
         }
+        else{
+            return;
+        }
         ans.add(head.val);
         inOrder(head.right,ans,k,count);
     }
