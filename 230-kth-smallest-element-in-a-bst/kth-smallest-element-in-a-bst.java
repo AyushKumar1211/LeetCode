@@ -21,17 +21,17 @@ class Solution {
        return ans.get(k-1); 
     }
     void inOrder(TreeNode head, ArrayList<Integer> ans,int k, int count){
-        if((head==null)||(k<=count)){
+        if(head==null){
             return;
         }
         inOrder(head.left,ans,k,count);
+        ans.add(head.val);
         if(count<k){
             count++;
         }
         else{
             return;
         }
-        ans.add(head.val);
         inOrder(head.right,ans,k,count);
     }
 }
